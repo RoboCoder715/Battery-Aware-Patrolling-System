@@ -1,0 +1,38 @@
+running develop
+Removing /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery-patrol.egg-link (link to .)
+running egg_info
+writing ../../build/battery_patrol/battery_patrol.egg-info/PKG-INFO
+writing dependency_links to ../../build/battery_patrol/battery_patrol.egg-info/dependency_links.txt
+writing entry points to ../../build/battery_patrol/battery_patrol.egg-info/entry_points.txt
+writing requirements to ../../build/battery_patrol/battery_patrol.egg-info/requires.txt
+writing top-level names to ../../build/battery_patrol/battery_patrol.egg-info/top_level.txt
+reading manifest file '../../build/battery_patrol/battery_patrol.egg-info/SOURCES.txt'
+writing manifest file '../../build/battery_patrol/battery_patrol.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/robocoder/project5_ws/build/battery_patrol/build
+creating /home/robocoder/project5_ws/build/battery_patrol/build/lib
+creating /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol
+copying battery_patrol/battery_monitor.py -> /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol
+copying battery_patrol/battery_simulator.py -> /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol
+copying battery_patrol/__init__.py -> /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol
+running install
+running install_lib
+creating /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol
+copying /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol/battery_monitor.py -> /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol
+copying /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol/battery_simulator.py -> /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol
+copying /home/robocoder/project5_ws/build/battery_patrol/build/lib/battery_patrol/__init__.py -> /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol
+byte-compiling /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol/battery_monitor.py to battery_monitor.cpython-310.pyc
+byte-compiling /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol/battery_simulator.py to battery_simulator.cpython-310.pyc
+byte-compiling /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol/__init__.py to __init__.cpython-310.pyc
+running install_data
+copying resource/battery_patrol -> /home/robocoder/project5_ws/install/battery_patrol/share/ament_index/resource_index/packages
+copying package.xml -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol
+copying launch/battery_patrol.launch.py -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/launch
+copying config/patrol_params.yaml -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/config
+running install_egg_info
+Copying ../../build/battery_patrol/battery_patrol.egg-info to /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery_patrol-0.1.0-py3.10.egg-info
+running install_scripts
+Installing battery_monitor script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+Installing battery_simulator script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+writing list of installed files to '/home/robocoder/project5_ws/build/battery_patrol/install.log'

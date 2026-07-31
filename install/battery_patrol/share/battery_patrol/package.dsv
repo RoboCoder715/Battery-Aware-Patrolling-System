@@ -1,0 +1,9 @@
+source;share/battery_patrol/hook/pythonpath.ps1
+source;share/battery_patrol/hook/pythonpath.dsv
+source;share/battery_patrol/hook/pythonpath.sh
+source;share/battery_patrol/hook/ament_prefix_path.ps1
+source;share/battery_patrol/hook/ament_prefix_path.dsv
+source;share/battery_patrol/hook/ament_prefix_path.sh
+source;../../build/battery_patrol/share/battery_patrol/hook/pythonpath_develop.ps1
+source;../../build/battery_patrol/share/battery_patrol/hook/pythonpath_develop.dsv
+source;../../build/battery_patrol/share/battery_patrol/hook/pythonpath_develop.sh

@@ -1,0 +1,4 @@
+[console_scripts]
+battery_monitor = battery_patrol.battery_monitor:main
+battery_simulator = battery_patrol.battery_simulator:main
+

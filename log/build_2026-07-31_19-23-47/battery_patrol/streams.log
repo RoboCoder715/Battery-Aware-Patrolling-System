@@ -1,0 +1,29 @@
+[0.680s] Invoking command in '/home/robocoder/project5_ws/build/battery_patrol': PYTHONPATH=/home/robocoder/project5_ws/build/battery_patrol/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robocoder/project5_ws/build/battery_patrol/build --no-deps symlink_data
+[0.934s] running develop
+[1.162s] running egg_info
+[1.162s] creating battery_patrol.egg-info
+[1.162s] writing battery_patrol.egg-info/PKG-INFO
+[1.162s] writing dependency_links to battery_patrol.egg-info/dependency_links.txt
+[1.163s] writing entry points to battery_patrol.egg-info/entry_points.txt
+[1.163s] writing requirements to battery_patrol.egg-info/requires.txt
+[1.163s] writing top-level names to battery_patrol.egg-info/top_level.txt
+[1.163s] writing manifest file 'battery_patrol.egg-info/SOURCES.txt'
+[1.166s] reading manifest file 'battery_patrol.egg-info/SOURCES.txt'
+[1.166s] writing manifest file 'battery_patrol.egg-info/SOURCES.txt'
+[1.168s] running build_ext
+[1.168s] Creating /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery-patrol.egg-link (link to .)
+[1.169s] Installing battery_monitor script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+[1.169s] Installing battery_simulator script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+[1.169s] 
+[1.170s] Installed /home/robocoder/project5_ws/build/battery_patrol
+[1.170s] running symlink_data
+[1.170s] creating /home/robocoder/project5_ws/install/battery_patrol/share/ament_index
+[1.170s] creating /home/robocoder/project5_ws/install/battery_patrol/share/ament_index/resource_index
+[1.170s] creating /home/robocoder/project5_ws/install/battery_patrol/share/ament_index/resource_index/packages
+[1.170s] symbolically linking /home/robocoder/project5_ws/build/battery_patrol/resource/battery_patrol -> /home/robocoder/project5_ws/install/battery_patrol/share/ament_index/resource_index/packages
+[1.170s] symbolically linking /home/robocoder/project5_ws/build/battery_patrol/package.xml -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol
+[1.170s] creating /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/launch
+[1.170s] symbolically linking /home/robocoder/project5_ws/build/battery_patrol/launch/battery_patrol.launch.py -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/launch
+[1.170s] creating /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/config
+[1.170s] symbolically linking /home/robocoder/project5_ws/build/battery_patrol/config/patrol_params.yaml -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/config
+[1.219s] Invoked command in '/home/robocoder/project5_ws/build/battery_patrol' returned '0': PYTHONPATH=/home/robocoder/project5_ws/build/battery_patrol/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robocoder/project5_ws/build/battery_patrol/build --no-deps symlink_data

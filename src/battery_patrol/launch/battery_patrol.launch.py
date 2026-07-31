@@ -112,9 +112,9 @@ def _launch_setup(context, *args, **kwargs):
         }],
     ))
 
-    # ── 3. battery_monitor — delayed so Nav2 finishes initialising ─────────────
+    # ── 3. battery_monitor — delayed so SLAM map is ready before first goal ────
     actions.append(TimerAction(
-        period=10.0 if not nodes_only else 2.0,
+        period=20.0 if not nodes_only else 2.0,
         actions=[Node(
             package='battery_patrol',
             executable='battery_monitor',

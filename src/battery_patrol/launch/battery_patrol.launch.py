@@ -78,9 +78,10 @@ def _launch_setup(context, *args, **kwargs):
         ))
 
         # 1b. Nav2 bringup with SLAM (slam:=True → SLAM Toolbox replaces AMCL).
-        #     params_file is an explicit string so RewrittenYaml always gets a
-        #     real path (never an empty LaunchConfiguration → avoids the
-        #     "FileNotFoundError: ''" crash from the nav2_common RewrittenYaml).
+        #     bringup_launch.py requires 'map' even in SLAM mode (declared but
+        #     not loaded at runtime when slam:=True). Point to the bundled map.
+        #     params_file is an explicit string → RewrittenYaml never gets ''.
+        dummy_map = os.path.join(nav2_bringup_dir, 'maps', 'turtlebot3_world.yaml')
         actions.append(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 os.path.join(nav2_bringup_dir, 'launch', 'bringup_launch.py')),
@@ -88,6 +89,7 @@ def _launch_setup(context, *args, **kwargs):
                 'slam':         'True',
                 'use_sim_time': use_sim_time,
                 'params_file':  nav2_params,
+                'map':          dummy_map,
             }.items(),
         ))
 

@@ -70,11 +70,18 @@ def _launch_setup(context, *args, **kwargs):
         nav2_bringup_dir = _pkg('nav2_bringup')
         nav2_params      = os.path.join(nav2_bringup_dir, 'params', 'nav2_params.yaml')
 
-        # 1a. TurtleBot3 Gazebo — empty world, spawns burger, publishes full TF tree
+        # 1a. TurtleBot3 Gazebo — empty world, spawns burger, publishes full TF tree.
+        #     Spawn at (1.0, 1.0) so the robot is inside the initial SLAM map bounds.
+        #     SLAM Toolbox initialises its map at (0,0)→(~5,~5); spawning at (0,0)
+        #     puts the robot on the edge and triggers "out of bounds" costmap warnings.
         actions.append(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 os.path.join(tb3_gazebo_dir, 'launch', 'empty_world.launch.py')),
-            launch_arguments={'use_sim_time': use_sim_time}.items(),
+            launch_arguments={
+                'use_sim_time': use_sim_time,
+                'x_pose': '1.0',
+                'y_pose': '1.0',
+            }.items(),
         ))
 
         # 1b. Nav2 bringup with SLAM (slam:=True → SLAM Toolbox replaces AMCL).

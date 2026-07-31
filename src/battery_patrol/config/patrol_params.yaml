@@ -1,53 +1,46 @@
 # patrol_params.yaml
 # ==================
-# Configuration for both nodes in the battery_patrol package.
-# Load via launch file or:
-#   ros2 run battery_patrol battery_simulator --ros-args --params-file patrol_params.yaml
+# Robot spawns at (1.0, 1.0) — all coords are offset accordingly so the
+# robot stays well inside the SLAM costmap bounds during the demo.
 
 battery_simulator:
   ros__parameters:
-    # How fast battery drains — % per second.
-    # At 1.0 %/s the robot has ~80 seconds of patrol before hitting the 20% threshold.
-    # Increase to 3.0–5.0 for faster demos.
-    drain_rate:      1.0
+    drain_rate:      1.0   # % per second  (override with drain_rate:=4.0 at launch)
     initial_charge:  100.0
-    publish_rate:    1.0          # Hz — how often BatteryState is published
+    publish_rate:    1.0   # Hz
 
 battery_monitor:
   ros__parameters:
     # ── Battery thresholds ─────────────────────────────────────────────────
-    low_battery_threshold: 20.0  # % — triggers go-to-charger behaviour
-    full_threshold:        95.0  # % — considered "fully charged" (unused in
-                                 #     current implementation; reset_battery
-                                 #     jumps straight to 100%)
-    charge_duration:       15.0  # seconds to wait at the charging station
+    low_battery_threshold: 20.0   # % → triggers go-to-charger
+    full_threshold:        95.0   # % → considered fully charged
+    charge_duration:       15.0   # seconds to wait at charging station
 
-    # ── Charging station pose (map frame) ─────────────────────────────────
-    # Place this where the robot can safely dock.
-    # In TurtleBot3 "empty world" the origin (0, 0) is the spawn point.
-    charger_x:    0.0
-    charger_y:    0.0
-    charger_yaw:  0.0            # radians
+    # ── Charging station ──────────────────────────────────────────────────
+    # Robot spawns at (1.0, 1.0) so the charger is placed there.
+    charger_x:    1.0
+    charger_y:    1.0
+    charger_yaw:  0.0
 
     # ── Patrol waypoints ──────────────────────────────────────────────────
-    # Flat list of triples: x  y  yaw (radians).
-    # The robot will cycle through these in order indefinitely.
+    # Square loop centred around spawn (1.0, 1.0).
+    # All points are at positive coords, well inside the SLAM map.
     #
-    #  WP0 (1.5,  0.0) ──► WP1 (1.5, 1.5)
-    #       ▲                     │
-    #       │                     ▼
-    #  WP3 (0.0,  0.0) ◄── WP2 (0.0, 1.5)
+    #  WP0 (2.5, 1.0) ──► WP1 (2.5, 2.5)
+    #       ▲                    │
+    #       │                    ▼
+    #  WP3 (1.0, 1.0) ◄── WP2 (1.0, 2.5)
     #
     patrol_waypoints:
-      - 1.5        #  WP0  x
-      - 0.0        #  WP0  y
-      - 0.0        #  WP0  yaw  (facing +x)
-      - 1.5        #  WP1  x
-      - 1.5        #  WP1  y
-      - 1.5708     #  WP1  yaw  (facing +y)  ≈ π/2
-      - 0.0        #  WP2  x
-      - 1.5        #  WP2  y
-      - 3.1416     #  WP2  yaw  (facing -x)  ≈ π
-      - 0.0        #  WP3  x
-      - 0.0        #  WP3  y
-      - -1.5708    #  WP3  yaw  (facing -y)  ≈ -π/2
+      - 2.5        # WP0  x
+      - 1.0        # WP0  y
+      - 0.0        # WP0  yaw  (facing +x)
+      - 2.5        # WP1  x
+      - 2.5        # WP1  y
+      - 1.5708     # WP1  yaw  (facing +y)
+      - 1.0        # WP2  x
+      - 2.5        # WP2  y
+      - 3.1416     # WP2  yaw  (facing -x)
+      - 1.0        # WP3  x
+      - 1.0        # WP3  y
+      - -1.5708    # WP3  yaw  (facing -y)

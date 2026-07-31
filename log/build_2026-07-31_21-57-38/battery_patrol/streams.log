@@ -1,0 +1,18 @@
+[0.569s] Invoking command in '/home/robocoder/project5_ws/build/battery_patrol': PYTHONPATH=/home/robocoder/project5_ws/build/battery_patrol/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robocoder/project5_ws/build/battery_patrol/build --no-deps symlink_data
+[0.803s] running develop
+[0.974s] running egg_info
+[0.974s] writing battery_patrol.egg-info/PKG-INFO
+[0.975s] writing dependency_links to battery_patrol.egg-info/dependency_links.txt
+[0.975s] writing entry points to battery_patrol.egg-info/entry_points.txt
+[0.975s] writing requirements to battery_patrol.egg-info/requires.txt
+[0.975s] writing top-level names to battery_patrol.egg-info/top_level.txt
+[0.976s] reading manifest file 'battery_patrol.egg-info/SOURCES.txt'
+[0.977s] writing manifest file 'battery_patrol.egg-info/SOURCES.txt'
+[0.978s] running build_ext
+[0.978s] Creating /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery-patrol.egg-link (link to .)
+[0.979s] Installing battery_monitor script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+[0.979s] Installing battery_simulator script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+[0.979s] 
+[0.979s] Installed /home/robocoder/project5_ws/build/battery_patrol
+[0.979s] running symlink_data
+[1.011s] Invoked command in '/home/robocoder/project5_ws/build/battery_patrol' returned '0': PYTHONPATH=/home/robocoder/project5_ws/build/battery_patrol/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robocoder/project5_ws/build/battery_patrol/build --no-deps symlink_data

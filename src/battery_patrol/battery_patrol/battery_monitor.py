@@ -29,6 +29,7 @@ from rclpy.node import Node
 from rclpy.action import ActionClient
 from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.executors import MultiThreadedExecutor
+from rclpy.qos import QoSProfile, DurabilityPolicy, ReliabilityPolicy
 
 from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg     import OccupancyGrid
@@ -117,10 +118,16 @@ class BatteryMonitor(Node):
             BatteryState, '/battery_state',
             self._battery_cb, 10, callback_group=self._cbg)
 
-        # Wait for SLAM map before sending any goals
+        # Wait for SLAM map — MUST use transient_local QoS to match slam_toolbox publisher.
+        # Default (volatile) QoS never receives the map message.
+        map_qos = QoSProfile(
+            depth=1,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            reliability=ReliabilityPolicy.RELIABLE,
+        )
         self.create_subscription(
             OccupancyGrid, '/map',
-            self._map_cb, 1, callback_group=self._cbg)
+            self._map_cb, map_qos, callback_group=self._cbg)
 
         # ── Publisher ─────────────────────────────────────────────────────────
         self._state_pub = self.create_publisher(String, '/robot_state', 10)
@@ -268,7 +275,11 @@ class BatteryMonitor(Node):
             if self._battery_pct <= self._low_thresh:
                 self._go_to_charger()
                 return
-            if not self._goal_in_flight and self._map_received:
+            # Send next patrol goal if none in flight.
+            # We no longer gate on _map_received — SLAM provides the map→odom
+            # transform independently of the /map topic subscription.
+            # RETRY_COOLDOWN prevents rapid-fire retries if Nav2 isn't ready yet.
+            if not self._goal_in_flight:
                 wp = self._waypoints[self._patrol_index]
                 self._send_goal(wp[0], wp[1], wp[2], f'WP[{self._patrol_index}]')
 

@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing battery_patrol.egg-info/PKG-INFO
+writing dependency_links to battery_patrol.egg-info/dependency_links.txt
+writing entry points to battery_patrol.egg-info/entry_points.txt
+writing requirements to battery_patrol.egg-info/requires.txt
+writing top-level names to battery_patrol.egg-info/top_level.txt
+reading manifest file 'battery_patrol.egg-info/SOURCES.txt'
+writing manifest file 'battery_patrol.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/robocoder/project5_ws/install/battery_patrol/lib/python3.10/site-packages/battery-patrol.egg-link (link to .)
+Installing battery_monitor script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+Installing battery_simulator script to /home/robocoder/project5_ws/install/battery_patrol/lib/battery_patrol
+
+Installed /home/robocoder/project5_ws/build/battery_patrol
+running symlink_data
+symbolically linking /home/robocoder/project5_ws/build/battery_patrol/config/nav2_params.yaml -> /home/robocoder/project5_ws/install/battery_patrol/share/battery_patrol/config

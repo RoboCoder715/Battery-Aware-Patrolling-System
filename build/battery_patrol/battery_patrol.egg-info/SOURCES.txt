@@ -18,6 +18,7 @@ battery_patrol.egg-info/entry_points.txt
 battery_patrol.egg-info/requires.txt
 battery_patrol.egg-info/top_level.txt
 battery_patrol.egg-info/zip-safe
+config/nav2_params.yaml
 config/patrol_params.yaml
 launch/battery_patrol.launch.py
 resource/battery_patrol

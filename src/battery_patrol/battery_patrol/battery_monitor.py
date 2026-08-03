@@ -1,24 +1,4 @@
 #!/usr/bin/env python3
-"""
-battery_monitor.py
-==================
-Watches /battery_state and drives a simple 3-state machine:
-
-    PATROLLING  →  GOING_TO_CHARGER  →  CHARGING  →  PATROLLING
-
-State descriptions
-------------------
-PATROLLING
-    Cycles through (x, y, yaw) waypoints via NavigateToPose.
-    On goal completion the next waypoint is sent automatically.
-
-GOING_TO_CHARGER
-    Triggered when battery % drops below low_battery_threshold.
-    Cancels the current Nav2 goal and sends the robot to the charger.
-
-CHARGING
-    Waits charge_duration seconds, calls /reset_battery, returns to PATROLLING.
-"""
 
 import math
 import time

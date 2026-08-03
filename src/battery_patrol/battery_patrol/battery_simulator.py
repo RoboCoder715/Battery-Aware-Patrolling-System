@@ -1,31 +1,4 @@
 #!/usr/bin/env python3
-"""
-battery_simulator.py
-====================
-Simulates a robot battery that drains over time and publishes the level on
-/battery_state (sensor_msgs/BatteryState).
-
-Topics published
-----------------
-  /battery_state  (sensor_msgs/BatteryState)   – battery percentage [0-100]
-  /robot_state    (std_msgs/String)             – human-readable state string
-
-Services provided
------------------
-  /reset_battery  (std_srvs/srv/Empty)          – resets battery to 100 %
-
-Parameters
-----------
-  drain_rate      (float, default 1.0)  – % drained per second
-  initial_charge  (float, default 100.0)
-  publish_rate    (float, default 1.0)  – Hz
-
-Student exercise hint
----------------------
-  Change 'drain_rate' to make the battery drain faster or slower.
-  You could also subscribe to /odom and drain proportional to distance
-  traveled instead of time.
-"""
 
 import rclpy
 from rclpy.node import Node
